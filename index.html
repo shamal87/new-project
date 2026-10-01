@@ -1,117 +1,256 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LearnHub - Course Enrollment</title>
+
+    <title>Shamal K. | Video Editor</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header>
-        <div class="logo">LearnHub</div>
+        <div class="logo">SHAMAL<span>.</span></div>
 
         <nav>
-            <a href="#courses">Courses</a>
+            <a href="#work">Work</a>
             <a href="#about">About</a>
-            <a href="#enroll">Enroll</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
+
+    <!-- Hero Section -->
     <section class="hero">
-        <div>
-            <h1>Learn Skills.<br>Build Your Future.</h1>
-            <p>
-                Enroll in practical courses and develop skills
-                that prepare you for the real world.
+
+        <div class="hero-content">
+
+            <p class="small-title">VIDEO EDITOR • CREATIVE • STORYTELLER</p>
+
+            <h1>
+                I TURN RAW
+                <span>FOOTAGE</span>
+                INTO STORIES.
+            </h1>
+
+            <p class="hero-text">
+                Cinematic video editing, travel films, reels and creative
+                visual content crafted to make every frame matter.
             </p>
-            <a href="#courses" class="btn">Explore Courses</a>
-        </div>
-    </section>
 
-    <section id="courses" class="courses">
-        <h2>Popular Courses</h2>
-        <p class="subtitle">Choose a course and start learning today.</p>
-
-        <div class="course-container">
-
-            <div class="course-card">
-                <h3>Cloud Computing</h3>
-                <p>Learn AWS, cloud infrastructure, networking and deployment.</p>
-                <h4>₹999</h4>
-                <button onclick="selectCourse('Cloud Computing')">
-                    Enroll Now
-                </button>
-            </div>
-
-            <div class="course-card">
-                <h3>Web Development</h3>
-                <p>Learn HTML, CSS, JavaScript and build modern websites.</p>
-                <h4>₹799</h4>
-                <button onclick="selectCourse('Web Development')">
-                    Enroll Now
-                </button>
-            </div>
-
-            <div class="course-card">
-                <h3>DevOps Fundamentals</h3>
-                <p>Learn Git, GitHub, CI/CD pipelines, Docker and deployment.</p>
-                <h4>₹1,199</h4>
-                <button onclick="selectCourse('DevOps Fundamentals')">
-                    Enroll Now
-                </button>
+            <div class="buttons">
+                <a href="#work" class="btn primary">View My Work</a>
+                <a href="#contact" class="btn secondary">Let's Work Together</a>
             </div>
 
         </div>
+
+        <div class="scroll-text">
+            SCROLL TO EXPLORE ↓
+        </div>
+
     </section>
 
-    <section id="enroll" class="enrollment">
-        <h2>Course Enrollment</h2>
 
-        <form onsubmit="enrollUser(event)">
+    <!-- Portfolio -->
+    <section id="work" class="work">
 
-            <input
-                type="text"
-                id="name"
-                placeholder="Enter your name"
-                required
-            >
+        <div class="section-heading">
+            <p>SELECTED WORK</p>
+            <h2>My <span>Portfolio</span></h2>
+        </div>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-            >
+        <div class="portfolio-grid">
 
-            <select id="course" required>
-                <option value="">Select a course</option>
-                <option>Cloud Computing</option>
-                <option>Web Development</option>
-                <option>DevOps Fundamentals</option>
-            </select>
+            <div class="project">
+                <div class="project-image project-one">
+                    <span>01</span>
+                </div>
 
-            <button type="submit">Submit Enrollment</button>
+                <div class="project-info">
+                    <h3>Travel Film</h3>
+                    <p>Cinematic Travel • Color Grading</p>
+                </div>
+            </div>
 
-        </form>
 
-        <p id="message"></p>
+            <div class="project">
+                <div class="project-image project-two">
+                    <span>02</span>
+                </div>
+
+                <div class="project-info">
+                    <h3>Luxury Lifestyle</h3>
+                    <p>Commercial • Social Media</p>
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div class="project-image project-three">
+                    <span>03</span>
+                </div>
+
+                <div class="project-info">
+                    <h3>Creative Reel</h3>
+                    <p>Instagram Reels • Short Form</p>
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div class="project-image project-four">
+                    <span>04</span>
+                </div>
+
+                <div class="project-info">
+                    <h3>Event Highlights</h3>
+                    <p>Events • Music • Storytelling</p>
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
+
+    <!-- About -->
     <section id="about" class="about">
-        <h2>About LearnHub</h2>
-        <p>
-            LearnHub is a sample educational platform created
-            for learning web development and CI/CD deployment.
-        </p>
+
+        <div class="about-text">
+
+            <p class="section-label">ABOUT ME</p>
+
+            <h2>
+                Creating visuals
+                <span>people remember.</span>
+            </h2>
+
+            <p>
+                I'm Shamal, a passionate video editor and visual creator
+                focused on cinematic storytelling. I enjoy turning ordinary
+                footage into engaging visual experiences.
+            </p>
+
+            <p>
+                From travel videos and social media reels to promotional
+                content, I focus on pacing, music, transitions and color
+                to create videos that feel alive.
+            </p>
+
+        </div>
+
     </section>
 
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+
+        <div class="section-heading">
+            <p>WHAT I DO</p>
+            <h2>Creative <span>Skills</span></h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <h3>01</h3>
+                <h4>Video Editing</h4>
+                <p>
+                    Professional editing, storytelling, pacing,
+                    transitions and music synchronization.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>02</h3>
+                <h4>Color Grading</h4>
+                <p>
+                    Cinematic color correction and creative
+                    color grading for different visual styles.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>03</h3>
+                <h4>Short Form Content</h4>
+                <p>
+                    Engaging Instagram Reels, YouTube Shorts
+                    and social media content.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>04</h3>
+                <h4>Photography</h4>
+                <p>
+                    Photography and visual composition with
+                    a focus on cinematic aesthetics.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Software -->
+    <section class="software">
+
+        <p class="section-label">TOOLS I USE</p>
+
+        <div class="software-list">
+            <span>DaVinci Resolve</span>
+            <span>Premiere Pro</span>
+            <span>Photoshop</span>
+            <span>After Effects</span>
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <p class="section-label">HAVE A PROJECT?</p>
+
+        <h2>
+            LET'S CREATE
+            <span>SOMETHING GREAT.</span>
+        </h2>
+
+        <p>
+            Have a video project, brand film or social media content?
+            Let's bring your idea to life.
+        </p>
+
+        <a href="mailto:your@email.com" class="contact-btn">
+            GET IN TOUCH →
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
     <footer>
-        <p>© 2026 LearnHub | CI/CD Learning Project</p>
+
+        <div>
+            <strong>SHAMAL<span>.</span></strong>
+            <p>Video Editor & Creative</p>
+        </div>
+
+        <p>© 2026 Shamal K. All Rights Reserved.</p>
+
     </footer>
+
 
     <script src="script.js"></script>
 
 </body>
 </html>
+```
