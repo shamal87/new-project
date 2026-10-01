@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub - Course Enrollment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">LearnHub</div>
+
+        <nav>
+            <a href="#courses">Courses</a>
+            <a href="#about">About</a>
+            <a href="#enroll">Enroll</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Learn Skills.<br>Build Your Future.</h1>
+            <p>
+                Enroll in practical courses and develop skills
+                that prepare you for the real world.
+            </p>
+            <a href="#courses" class="btn">Explore Courses</a>
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <h2>Popular Courses</h2>
+        <p class="subtitle">Choose a course and start learning today.</p>
+
+        <div class="course-container">
+
+            <div class="course-card">
+                <h3>Cloud Computing</h3>
+                <p>Learn AWS, cloud infrastructure, networking and deployment.</p>
+                <h4>₹999</h4>
+                <button onclick="selectCourse('Cloud Computing')">
+                    Enroll Now
+                </button>
+            </div>
+
+            <div class="course-card">
+                <h3>Web Development</h3>
+                <p>Learn HTML, CSS, JavaScript and build modern websites.</p>
+                <h4>₹799</h4>
+                <button onclick="selectCourse('Web Development')">
+                    Enroll Now
+                </button>
+            </div>
+
+            <div class="course-card">
+                <h3>DevOps Fundamentals</h3>
+                <p>Learn Git, GitHub, CI/CD pipelines, Docker and deployment.</p>
+                <h4>₹1,199</h4>
+                <button onclick="selectCourse('DevOps Fundamentals')">
+                    Enroll Now
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="enroll" class="enrollment">
+        <h2>Course Enrollment</h2>
+
+        <form onsubmit="enrollUser(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <select id="course" required>
+                <option value="">Select a course</option>
+                <option>Cloud Computing</option>
+                <option>Web Development</option>
+                <option>DevOps Fundamentals</option>
+            </select>
+
+            <button type="submit">Submit Enrollment</button>
+
+        </form>
+
+        <p id="message"></p>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About LearnHub</h2>
+        <p>
+            LearnHub is a sample educational platform created
+            for learning web development and CI/CD deployment.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 LearnHub | CI/CD Learning Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
