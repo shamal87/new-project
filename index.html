@@ -12,11 +12,12 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- NAVBAR -->
     <header>
         <div class="logo">SHAMAL<span>.</span></div>
 
         <nav>
+            <a href="#home">Home</a>
             <a href="#work">Work</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -25,93 +26,225 @@
     </header>
 
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- HERO -->
+    <section id="home" class="hero">
 
         <div class="hero-content">
 
-            <p class="small-title">VIDEO EDITOR • CREATIVE • STORYTELLER</p>
+            <p class="small-title">
+                VIDEO EDITOR • CREATIVE • STORYTELLER
+            </p>
 
             <h1>
-                I TURN RAW
-                <span>FOOTAGE</span>
+                I TURN RAW<br>
+                <span>FOOTAGE</span><br>
                 INTO STORIES.
             </h1>
 
             <p class="hero-text">
-                Cinematic video editing, travel films, reels and creative
-                visual content crafted to make every frame matter.
+                Cinematic video editing, travel films, reels and
+                creative visual content crafted to make every frame matter.
             </p>
 
-            <div class="buttons">
-                <a href="#work" class="btn primary">View My Work</a>
-                <a href="#contact" class="btn secondary">Let's Work Together</a>
+            <div class="hero-buttons">
+
+                <a href="#work" class="btn primary">
+                    VIEW MY WORK
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    LET'S WORK TOGETHER
+                </a>
+
             </div>
 
         </div>
 
-        <div class="scroll-text">
+        <div class="scroll">
             SCROLL TO EXPLORE ↓
         </div>
 
     </section>
 
 
-    <!-- Portfolio -->
+    <!-- PORTFOLIO -->
     <section id="work" class="work">
 
         <div class="section-heading">
+
             <p>SELECTED WORK</p>
-            <h2>My <span>Portfolio</span></h2>
+
+            <h2>
+                My <span>Portfolio</span>
+            </h2>
+
+            <div class="description">
+                A selection of sample projects showcasing
+                cinematic editing, storytelling and visual creativity.
+            </div>
+
         </div>
+
 
         <div class="portfolio-grid">
 
+
+            <!-- PROJECT 1 -->
+
             <div class="project">
+
                 <div class="project-image project-one">
-                    <span>01</span>
+
+                    <span class="number">01</span>
+
+                    <button
+                        class="play"
+                        onclick="openProject('Travel Film')">
+                        ▶
+                    </button>
+
                 </div>
 
                 <div class="project-info">
-                    <h3>Travel Film</h3>
-                    <p>Cinematic Travel • Color Grading</p>
+
+                    <div>
+                        <h3>Travel Film</h3>
+
+                        <p>
+                            Cinematic Travel • Color Grading
+                        </p>
+                    </div>
+
+                    <button
+                        class="view-project"
+                        onclick="openProject('Travel Film')">
+
+                        VIEW PROJECT →
+
+                    </button>
+
                 </div>
+
             </div>
 
 
+
+            <!-- PROJECT 2 -->
+
             <div class="project">
+
                 <div class="project-image project-two">
-                    <span>02</span>
+
+                    <span class="number">02</span>
+
+                    <button
+                        class="play"
+                        onclick="openProject('Luxury Brand Film')">
+                        ▶
+                    </button>
+
                 </div>
 
                 <div class="project-info">
-                    <h3>Luxury Lifestyle</h3>
-                    <p>Commercial • Social Media</p>
+
+                    <div>
+                        <h3>Luxury Brand Film</h3>
+
+                        <p>
+                            Commercial • Cinematic
+                        </p>
+                    </div>
+
+                    <button
+                        class="view-project"
+                        onclick="openProject('Luxury Brand Film')">
+
+                        VIEW PROJECT →
+
+                    </button>
+
                 </div>
+
             </div>
 
 
+
+            <!-- PROJECT 3 -->
+
             <div class="project">
+
                 <div class="project-image project-three">
-                    <span>03</span>
+
+                    <span class="number">03</span>
+
+                    <button
+                        class="play"
+                        onclick="openProject('Travel Reel')">
+                        ▶
+                    </button>
+
                 </div>
 
                 <div class="project-info">
-                    <h3>Creative Reel</h3>
-                    <p>Instagram Reels • Short Form</p>
+
+                    <div>
+                        <h3>Travel Reel</h3>
+
+                        <p>
+                            Instagram Reels • Short Form
+                        </p>
+                    </div>
+
+                    <button
+                        class="view-project"
+                        onclick="openProject('Travel Reel')">
+
+                        VIEW PROJECT →
+
+                    </button>
+
                 </div>
+
             </div>
 
 
+
+            <!-- PROJECT 4 -->
+
             <div class="project">
+
                 <div class="project-image project-four">
-                    <span>04</span>
+
+                    <span class="number">04</span>
+
+                    <button
+                        class="play"
+                        onclick="openProject('Event Highlights')">
+                        ▶
+                    </button>
+
                 </div>
 
                 <div class="project-info">
-                    <h3>Event Highlights</h3>
-                    <p>Events • Music • Storytelling</p>
+
+                    <div>
+                        <h3>Event Highlights</h3>
+
+                        <p>
+                            Events • Music • Storytelling
+                        </p>
+                    </div>
+
+                    <button
+                        class="view-project"
+                        onclick="openProject('Event Highlights')">
+
+                        VIEW PROJECT →
+
+                    </button>
+
                 </div>
+
             </div>
 
         </div>
@@ -119,12 +252,73 @@
     </section>
 
 
-    <!-- About -->
+
+    <!-- PROJECT MODAL -->
+
+    <div id="projectModal" class="modal">
+
+        <div class="modal-box">
+
+            <button
+                class="close"
+                onclick="closeProject()">
+                ×
+            </button>
+
+
+            <div class="video-preview">
+
+                <div class="big-play">
+                    ▶
+                </div>
+
+                <h3 id="modalTitle">
+                    Project
+                </h3>
+
+                <p>
+                    Sample Video Preview
+                </p>
+
+            </div>
+
+
+            <h2 id="projectName">
+                Project Name
+            </h2>
+
+            <p class="modal-description">
+
+                This is a sample portfolio project created
+                to demonstrate cinematic editing, storytelling,
+                music synchronization and color grading.
+
+            </p>
+
+            <a
+                href="#"
+                class="watch-button"
+                onclick="watchVideo(event)">
+
+                WATCH FULL PROJECT →
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ABOUT -->
+
     <section id="about" class="about">
 
-        <div class="about-text">
+        <div class="about-content">
 
-            <p class="section-label">ABOUT ME</p>
+            <p class="section-label">
+                ABOUT ME
+            </p>
 
             <h2>
                 Creating visuals
@@ -132,15 +326,14 @@
             </h2>
 
             <p>
-                I'm Shamal, a passionate video editor and visual creator
-                focused on cinematic storytelling. I enjoy turning ordinary
-                footage into engaging visual experiences.
+                I'm Shamal, a passionate video editor and visual
+                creator focused on cinematic storytelling.
             </p>
 
             <p>
-                From travel videos and social media reels to promotional
-                content, I focus on pacing, music, transitions and color
-                to create videos that feel alive.
+                I enjoy turning ordinary footage into engaging
+                visual experiences using editing, music,
+                transitions and color grading.
             </p>
 
         </div>
@@ -148,50 +341,86 @@
     </section>
 
 
-    <!-- Skills -->
+
+    <!-- SKILLS -->
+
     <section id="skills" class="skills">
 
         <div class="section-heading">
+
             <p>WHAT I DO</p>
-            <h2>Creative <span>Skills</span></h2>
+
+            <h2>
+                Creative <span>Skills</span>
+            </h2>
+
         </div>
+
 
         <div class="skills-grid">
 
-            <div class="skill">
-                <h3>01</h3>
-                <h4>Video Editing</h4>
-                <p>
-                    Professional editing, storytelling, pacing,
-                    transitions and music synchronization.
-                </p>
-            </div>
 
             <div class="skill">
-                <h3>02</h3>
-                <h4>Color Grading</h4>
+
+                <span>01</span>
+
+                <h3>
+                    Video Editing
+                </h3>
+
+                <p>
+                    Professional editing, storytelling,
+                    pacing, transitions and music synchronization.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <span>02</span>
+
+                <h3>
+                    Color Grading
+                </h3>
+
                 <p>
                     Cinematic color correction and creative
                     color grading for different visual styles.
                 </p>
+
             </div>
 
-            <div class="skill">
-                <h3>03</h3>
-                <h4>Short Form Content</h4>
-                <p>
-                    Engaging Instagram Reels, YouTube Shorts
-                    and social media content.
-                </p>
-            </div>
 
             <div class="skill">
-                <h3>04</h3>
-                <h4>Photography</h4>
+
+                <span>03</span>
+
+                <h3>
+                    Short Form
+                </h3>
+
                 <p>
-                    Photography and visual composition with
-                    a focus on cinematic aesthetics.
+                    Instagram Reels, YouTube Shorts and
+                    engaging social media content.
                 </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <span>04</span>
+
+                <h3>
+                    Photography
+                </h3>
+
+                <p>
+                    Photography and visual composition
+                    with a cinematic approach.
+                </p>
+
             </div>
 
         </div>
@@ -199,25 +428,38 @@
     </section>
 
 
-    <!-- Software -->
+
+    <!-- SOFTWARE -->
+
     <section class="software">
 
-        <p class="section-label">TOOLS I USE</p>
+        <p>
+            TOOLS I USE
+        </p>
 
         <div class="software-list">
+
             <span>DaVinci Resolve</span>
+
             <span>Premiere Pro</span>
+
             <span>Photoshop</span>
+
             <span>After Effects</span>
+
         </div>
 
     </section>
 
 
-    <!-- Contact -->
+
+    <!-- CONTACT -->
+
     <section id="contact" class="contact">
 
-        <p class="section-label">HAVE A PROJECT?</p>
+        <p class="section-label">
+            HAVE A PROJECT?
+        </p>
 
         <h2>
             LET'S CREATE
@@ -225,26 +467,41 @@
         </h2>
 
         <p>
-            Have a video project, brand film or social media content?
-            Let's bring your idea to life.
+            Have a video project, brand film or social media
+            content? Let's bring your idea to life.
         </p>
 
-        <a href="mailto:your@email.com" class="contact-btn">
+        <a
+            href="mailto:your@email.com"
+            class="contact-button">
+
             GET IN TOUCH →
+
         </a>
 
     </section>
 
 
-    <!-- Footer -->
+
+    <!-- FOOTER -->
+
     <footer>
 
         <div>
-            <strong>SHAMAL<span>.</span></strong>
-            <p>Video Editor & Creative</p>
+
+            <strong>
+                SHAMAL<span>.</span>
+            </strong>
+
+            <p>
+                Video Editor & Creative
+            </p>
+
         </div>
 
-        <p>© 2026 Shamal K. All Rights Reserved.</p>
+        <p>
+            © 2026 Shamal K. All Rights Reserved.
+        </p>
 
     </footer>
 
