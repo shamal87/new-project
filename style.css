@@ -1,4 +1,8 @@
-```css
+/* =========================================================
+   MODERN CLOUD / DEVOPS PORTFOLIO THEME
+   Dark Navy + Electric Blue
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,24 +14,42 @@ html {
 }
 
 body {
-    background: #080808;
-    color: white;
+    background: #050816;
+    color: #f5f7ff;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-/* =========================
+::selection {
+    background: #3b82f6;
+    color: white;
+}
+
+a {
+    transition: 0.3s ease;
+}
+
+.logo span,
+h1 span,
+h2 span {
+    color: #3b82f6;
+}
+
+/* =========================================================
    NAVBAR
-========================= */
+========================================================= */
 
 header {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
 
-    padding: 30px 7%;
+    padding: 28px 7%;
 
     display: flex;
     justify-content: space-between;
@@ -37,41 +59,58 @@ header {
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 900;
     letter-spacing: 3px;
 }
 
-.logo span,
-h1 span,
-h2 span {
-    color: #ff4d00;
+.logo span {
+    color: #3b82f6;
 }
 
 nav {
     display: flex;
-    gap: 30px;
+    gap: 35px;
 }
 
 nav a {
-    color: white;
+    position: relative;
+
+    color: #b8c1d9;
     text-decoration: none;
 
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #3b82f6;
 
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #ff4d00;
+    color: white;
 }
 
+nav a:hover::after {
+    width: 100%;
+}
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
     min-height: 100vh;
@@ -84,25 +123,64 @@ nav a:hover {
     position: relative;
 
     background:
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(37, 99, 235, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(59, 130, 246, 0.08),
+            transparent 30%
+        ),
+        #050816;
+
+    overflow: hidden;
+}
+
+/* Background grid */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.95),
-            rgba(0,0,0,0.45)
-        ),
-        url("https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=2000&q=85");
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
 
-    background-size: cover;
-    background-position: center;
+    background-size: 60px 60px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent
+    );
+
+    pointer-events: none;
 }
 
 .hero-content {
     max-width: 900px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 .small-title,
 .section-heading > p,
 .section-label {
-    color: #ff4d00;
+    color: #60a5fa;
 
     font-size: 12px;
 
@@ -119,28 +197,43 @@ nav a:hover {
     line-height: 0.9;
 
     font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: #3b82f6;
+
+    text-shadow:
+        0 0 30px rgba(59,130,246,0.35);
 }
 
 .hero-text {
-    color: #aaa;
+    color: #8994ad;
 
-    max-width: 600px;
+    max-width: 650px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
     margin: 35px 0;
 
     font-size: 17px;
 }
 
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .hero-buttons {
     display: flex;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 16px 25px;
+    padding: 15px 25px;
 
     text-decoration: none;
 
@@ -150,45 +243,62 @@ nav a:hover {
 
     letter-spacing: 1px;
 
+    border-radius: 6px;
+
     transition: 0.3s;
 }
 
 .primary {
-    background: #ff4d00;
+    background: #2563eb;
+
     color: white;
+
+    box-shadow:
+        0 0 25px rgba(37,99,235,0.25);
 }
 
 .primary:hover {
-    background: white;
-    color: black;
+    background: #60a5fa;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 35px rgba(37,99,235,0.35);
 }
 
 .secondary {
-    border: 1px solid #555;
-    color: white;
+    border: 1px solid #263452;
+
+    color: #dce5ff;
+
+    background: rgba(255,255,255,0.02);
 }
 
 .secondary:hover {
-    border-color: #ff4d00;
+    border-color: #3b82f6;
+
+    background: rgba(59,130,246,0.08);
+
+    transform: translateY(-3px);
 }
 
 .scroll {
     position: absolute;
 
     bottom: 30px;
+
     right: 7%;
 
-    color: #777;
+    color: #4f5d78;
 
     font-size: 10px;
 
     letter-spacing: 3px;
 }
 
-
-/* =========================
+/* =========================================================
    GENERAL SECTIONS
-========================= */
+========================================================= */
 
 .work,
 .about,
@@ -204,30 +314,41 @@ nav a:hover {
 
 .section-heading h2 {
     font-size: 55px;
+
+    letter-spacing: -2px;
 }
 
 .description {
-    color: #777;
+    color: #6f7b94;
 
     max-width: 600px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
     margin-top: 15px;
 }
 
-
-/* =========================
+/* =========================================================
    PORTFOLIO
-========================= */
+========================================================= */
+
+.work {
+    background: #070b18;
+}
 
 .portfolio-grid {
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 60px 25px;
+    gap: 50px 25px;
 }
+
+.project {
+    position: relative;
+}
+
+/* Project image */
 
 .project-image {
     height: 430px;
@@ -235,11 +356,33 @@ nav a:hover {
     position: relative;
 
     background-size: cover;
+
     background-position: center;
 
     overflow: hidden;
 
+    border-radius: 10px;
+
+    border: 1px solid #17233d;
+
     transition: 0.5s;
+}
+
+.project-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 30%,
+            rgba(5,8,22,0.85)
+        );
+
+    z-index: 1;
 }
 
 .project-image::after {
@@ -249,19 +392,31 @@ nav a:hover {
 
     inset: 0;
 
-    background: rgba(0,0,0,0.2);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.15),
+            transparent 50%
+        );
+
+    opacity: 0;
 
     transition: 0.4s;
 }
 
-.project:hover .project-image::after {
-    background: rgba(0,0,0,0.6);
-}
-
 .project:hover .project-image {
-    transform: scale(1.01);
+    transform: translateY(-6px);
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.4),
+        0 0 30px rgba(37,99,235,0.12);
 }
 
+.project:hover .project-image::after {
+    opacity: 1;
+}
 
 /* Project images */
 
@@ -285,8 +440,9 @@ nav a:hover {
         url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1400&q=85");
 }
 
-
-/* Number */
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
 
 .number {
     position: absolute;
@@ -296,15 +452,22 @@ nav a:hover {
 
     z-index: 3;
 
-    background: black;
+    background: rgba(5,8,22,0.85);
+
+    border: 1px solid #263452;
 
     padding: 8px 12px;
 
     font-size: 12px;
+
+    border-radius: 5px;
+
+    color: #8ea0c4;
 }
 
-
-/* Play button */
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
 
 .play {
     position: absolute;
@@ -321,9 +484,9 @@ nav a:hover {
 
     border-radius: 50%;
 
-    border: 1px solid white;
+    border: 1px solid rgba(255,255,255,0.6);
 
-    background: rgba(0,0,0,0.3);
+    background: rgba(3,7,18,0.65);
 
     color: white;
 
@@ -334,14 +497,26 @@ nav a:hover {
     opacity: 0;
 
     transition: 0.4s;
+
+    backdrop-filter: blur(8px);
 }
 
 .project:hover .play {
     opacity: 1;
 }
 
+.play:hover {
+    background: #2563eb;
 
-/* Project info */
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 30px rgba(37,99,235,0.4);
+}
+
+/* =========================================================
+   PROJECT INFO
+========================================================= */
 
 .project-info {
     padding-top: 20px;
@@ -360,7 +535,7 @@ nav a:hover {
 }
 
 .project-info p {
-    color: #777;
+    color: #65718a;
 
     margin-top: 8px;
 
@@ -372,7 +547,7 @@ nav a:hover {
 
     border: none;
 
-    color: #ff4d00;
+    color: #60a5fa;
 
     font-size: 11px;
 
@@ -389,21 +564,23 @@ nav a:hover {
     color: white;
 }
 
-
-/* =========================
+/* =========================================================
    MODAL
-========================= */
+========================================================= */
 
 .modal {
     position: fixed;
 
     inset: 0;
 
-    background: rgba(0,0,0,0.94);
+    background: rgba(2,5,15,0.94);
+
+    backdrop-filter: blur(12px);
 
     display: none;
 
     justify-content: center;
+
     align-items: center;
 
     z-index: 100;
@@ -418,17 +595,25 @@ nav a:hover {
 
     max-width: 900px;
 
-    background: #111;
+    background: #0a1022;
+
+    border: 1px solid #1d2b4a;
 
     padding: 30px;
 
     position: relative;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.6);
 }
 
 .close {
     position: absolute;
 
     top: 10px;
+
     right: 20px;
 
     background: none;
@@ -444,13 +629,17 @@ nav a:hover {
     z-index: 10;
 }
 
+.close:hover {
+    color: #60a5fa;
+}
+
 .video-preview {
     height: 430px;
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.25),
-            rgba(0,0,0,0.7)
+            rgba(5,8,22,0.25),
+            rgba(5,8,22,0.85)
         ),
         url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85");
 
@@ -467,10 +656,13 @@ nav a:hover {
     justify-content: center;
 
     margin-bottom: 25px;
+
+    border-radius: 8px;
 }
 
 .big-play {
     width: 75px;
+
     height: 75px;
 
     border: 2px solid white;
@@ -480,9 +672,13 @@ nav a:hover {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     margin-bottom: 20px;
+
+    box-shadow:
+        0 0 30px rgba(59,130,246,0.2);
 }
 
 .video-preview h3 {
@@ -490,7 +686,7 @@ nav a:hover {
 }
 
 .video-preview p {
-    color: #aaa;
+    color: #9aa7c2;
 
     margin-top: 8px;
 }
@@ -502,7 +698,7 @@ nav a:hover {
 }
 
 .modal-description {
-    color: #888;
+    color: #7e8ba5;
 
     line-height: 1.7;
 }
@@ -514,7 +710,7 @@ nav a:hover {
 
     padding: 15px 25px;
 
-    background: #ff4d00;
+    background: #2563eb;
 
     color: white;
 
@@ -523,15 +719,30 @@ nav a:hover {
     font-size: 12px;
 
     font-weight: bold;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
 }
 
+.watch-button:hover {
+    background: #60a5fa;
 
-/* =========================
+    transform: translateY(-2px);
+}
+
+/* =========================================================
    ABOUT
-========================= */
+========================================================= */
 
 .about {
-    background: #111;
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(37,99,235,0.08),
+            transparent 35%
+        ),
+        #050816;
 }
 
 .about-content {
@@ -544,24 +755,31 @@ nav a:hover {
     line-height: 1;
 
     margin-bottom: 35px;
+
+    letter-spacing: -2px;
 }
 
 .about h2 span {
     display: block;
+
+    color: #3b82f6;
 }
 
 .about-content > p:not(.section-label) {
-    color: #999;
+    color: #8994ad;
 
-    line-height: 1.8;
+    line-height: 1.9;
 
     margin-bottom: 20px;
 }
 
-
-/* =========================
+/* =========================================================
    SKILLS
-========================= */
+========================================================= */
+
+.skills {
+    background: #070b18;
+}
 
 .skills-grid {
     display: grid;
@@ -572,15 +790,40 @@ nav a:hover {
 }
 
 .skill {
-    border-top: 1px solid #333;
+    border: 1px solid #18233b;
 
-    padding-top: 25px;
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.025),
+            rgba(255,255,255,0)
+        );
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.skill:hover {
+    border-color: #2563eb;
+
+    transform: translateY(-6px);
+
+    background:
+        rgba(37,99,235,0.05);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.25);
 }
 
 .skill > span {
-    color: #ff4d00;
+    color: #60a5fa;
 
     font-size: 13px;
+
+    font-weight: bold;
 }
 
 .skill h3 {
@@ -590,20 +833,24 @@ nav a:hover {
 }
 
 .skill p {
-    color: #777;
+    color: #737f98;
 
     line-height: 1.7;
 }
 
-
-/* =========================
+/* =========================================================
    SOFTWARE
-========================= */
+========================================================= */
 
 .software {
-    background: #ff4d00;
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
 
-    color: black;
+    color: white;
 }
 
 .software > p {
@@ -614,6 +861,8 @@ nav a:hover {
     font-weight: bold;
 
     margin-bottom: 30px;
+
+    color: #dbeafe;
 }
 
 .software-list {
@@ -621,81 +870,151 @@ nav a:hover {
 
     flex-wrap: wrap;
 
-    gap: 30px;
+    gap: 18px;
 }
 
 .software-list span {
-    font-size: 25px;
+    font-size: 20px;
 
     font-weight: bold;
 
-    border-bottom: 2px solid black;
+    border: 1px solid rgba(255,255,255,0.3);
 
-    padding-bottom: 8px;
+    padding: 14px 20px;
+
+    border-radius: 6px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(5px);
+
+    transition: 0.3s;
 }
 
+.software-list span:hover {
+    background: white;
 
-/* =========================
+    color: #1d4ed8;
+
+    transform: translateY(-3px);
+}
+
+/* =========================================================
    CONTACT
-========================= */
+========================================================= */
 
 .contact {
     text-align: center;
+
+    background: #050816;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.contact::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(37,99,235,0.08);
+
+    filter: blur(100px);
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 40%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
 }
 
 .contact h2 {
+    position: relative;
+
     font-size: clamp(50px, 8vw, 100px);
 
     line-height: 0.95;
 
     margin-bottom: 30px;
+
+    letter-spacing: -3px;
 }
 
 .contact h2 span {
     display: block;
+
+    color: #3b82f6;
 }
 
 .contact > p:not(.section-label) {
-    color: #888;
+    color: #77839b;
 
     max-width: 550px;
 
     margin: auto;
 
     line-height: 1.7;
+
+    position: relative;
 }
 
 .contact-button {
+    position: relative;
+
     display: inline-block;
 
     margin-top: 35px;
 
     padding: 18px 30px;
 
-    background: #ff4d00;
+    background: #2563eb;
 
     color: white;
 
     text-decoration: none;
 
     font-weight: bold;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.25);
+
+    transition: 0.3s;
 }
 
+.contact-button:hover {
+    background: #60a5fa;
 
-/* =========================
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(37,99,235,0.35);
+}
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
     padding: 40px 7%;
 
-    border-top: 1px solid #222;
+    border-top: 1px solid #151e32;
 
     display: flex;
 
     justify-content: space-between;
 
-    color: #666;
+    color: #536078;
+
+    background: #040611;
 }
 
 footer strong {
@@ -705,17 +1024,16 @@ footer strong {
 }
 
 footer strong span {
-    color: #ff4d00;
+    color: #3b82f6;
 }
 
 footer p {
     margin-top: 5px;
 }
 
-
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 800px) {
 
@@ -767,6 +1085,9 @@ footer p {
     }
 }
 
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 500px) {
 
@@ -776,6 +1097,12 @@ footer p {
 
     .hero h1 {
         font-size: 55px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-text {
+        font-size: 15px;
     }
 
     .project-info {
@@ -790,7 +1117,13 @@ footer p {
 
     .modal-box {
         padding: 20px;
+
+        width: 94%;
     }
 
+    .software-list span {
+        font-size: 17px;
+
+        padding: 12px 15px;
+    }
 }
-```
